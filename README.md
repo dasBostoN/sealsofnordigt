@@ -1,7 +1,12 @@
 # sealsofnordigt
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+This is a webapp with the purpose of listing the different SEAL awards that the podcast [Nörd:igt] has given out.
+The webapp is published at ...
+
+## Disclaimer
+
+This is a fanmade project and has no affiliation with [Nörd:igt]. They have the right to their respective trademarks and copyrights.
+They can be found at the site www.nördigt.nu.
 
 ## Build & development
 
