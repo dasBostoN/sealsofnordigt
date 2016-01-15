@@ -1,0 +1,40 @@
+<h1>Den stora sällistan</h1>
+
+
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    
+    <tr>
+      <th>Sältyp</th>
+      <th>Produkt</th>
+      <th>Typ</th>
+      <th>Utdelare</th>
+      <th>Datum utdelat</th>
+      <th>Avsnitt</th>
+    </tr>
+
+    <tr ng-repeat="seal in seals">
+      <td>
+        {{seal.seal}}
+      </td>
+      <td>{{seal.titel}}</td>
+      <td>{{seal.type}}</td>
+      <td>{{seal.publisher}}</td>
+      <td>{{seal.date}}</td>
+      <td>{{seal.episode}}</td>
+    </tr>
+    
+    <!--<tr ng-repeat="seal in seals">
+      <td>
+        <span ng-repeat="s in seal.seals">{{s.name}}, </span>
+      </td>
+      <td>{{seal.item}}</td>
+      <td>
+        <span ng-repeat="d in seal.dispensers">{{d.name}}</span>  
+      </td>
+      <td>{{seal.date}}</td>
+      <td>EP{{seal.episode}}</td>
+    </tr>-->
+  </table>
+</div>

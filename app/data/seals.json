@@ -1,0 +1,3 @@
+[{ "seals":[{"name":"säl"}], "date":"20151201", "dispensers":[{"name":"Tove"}], "item":"nördigt", "episode":"123"},
+ { "seals":[{"name":"käl"}, {"name":"mats-säl"}], "date":"20151202", "dispensers":[{"name":"Mats"}], "item":"nördigt", "episode":"97"},
+ { "seals":[{"name":"säl"}], "date":"20151216"}]
