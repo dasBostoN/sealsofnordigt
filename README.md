@@ -11,6 +11,7 @@ They can be found at the site www.nördigt.nu.
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
+Navigate to app/data and run `node xlsx-to-json.js` to update json from xlsx-file.
 
 ## Testing
 
