@@ -1,40 +1,74 @@
+<div ng-controller="MainCtrl">
+
 <h1>Den stora sällistan</h1>
 
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-search"></i></div>
 
+      <input type="text" class="form-control" placeholder="Search" ng-model="search">
+
+    </div>      
+  </div>
+</form>
 
 <div class="table-responsive">
   <table class="table table-striped">
     
     <tr>
-      <th>Sältyp</th>
-      <th>Produkt</th>
-      <th>Typ</th>
-      <th>Utdelare</th>
-      <th>Datum utdelat</th>
-      <th>Avsnitt</th>
+      <th>
+        <a href="#/" ng-click="sortType = 'seal'; sortReverse = !sortReverse">
+          Sältyp
+          <span ng-show="sortType == 'seal' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'seal' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a href="#/" ng-click="sortType = 'titel'; sortReverse = !sortReverse">
+          Titel
+          <span ng-show="sortType == 'titel' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'titel' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a href="#/" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+          Typ
+          <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a href="#/" ng-click="sortType = 'publisher'; sortReverse = !sortReverse">
+          Utdelare
+          <span ng-show="sortType == 'publisher' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'publisher' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a href="#/" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+          Datum utdelat
+          <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a href="#/" ng-click="sortType = 'episode'; sortReverse = !sortReverse">
+          Avsnitt
+          <span ng-show="sortType == 'episode' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'episode' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
     </tr>
 
-    <tr ng-repeat="seal in seals">
-      <td>
-        {{seal.seal}}
-      </td>
+    <tr ng-repeat="seal in seals | orderBy:sortType:sortRevers | filter:search">
+      <td>{{seal.seal}}</td>
       <td>{{seal.titel}}</td>
       <td>{{seal.type}}</td>
       <td>{{seal.publisher}}</td>
       <td>{{seal.date}}</td>
       <td>{{seal.episode}}</td>
     </tr>
-    
-    <!--<tr ng-repeat="seal in seals">
-      <td>
-        <span ng-repeat="s in seal.seals">{{s.name}}, </span>
-      </td>
-      <td>{{seal.item}}</td>
-      <td>
-        <span ng-repeat="d in seal.dispensers">{{d.name}}</span>  
-      </td>
-      <td>{{seal.date}}</td>
-      <td>EP{{seal.episode}}</td>
-    </tr>-->
   </table>
+</div>
 </div>
